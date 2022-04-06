@@ -39,9 +39,11 @@ class HomePage extends StatelessWidget {
               elevation: 5,
             ),
           ),
-          const Card(
-            color: Colors.red,
-            child: Text('List of TX'),
+          Column(
+            children: const [
+              Card(),
+              Card(),
+            ],
           ),
         ],
       ),
