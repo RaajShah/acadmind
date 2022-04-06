@@ -14,7 +14,7 @@ class HomePage extends StatelessWidget {
           Container(
             width: double.infinity,
             child: const Card(
-              child: Text('CHARTs'),
+              child: Text('CHART for Me and Me'),
             ),
           ),
           const Card(
