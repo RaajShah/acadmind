@@ -2,6 +2,7 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import './transaction.dart';
+import 'package:intl/intl.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -43,38 +44,40 @@ class HomePage extends StatelessWidget {
           ),
           Column(
             children: transaction.map((tx) {
-              return Row(
-                children: [
-                  Container(
-                    margin: const EdgeInsets.symmetric(
-                        vertical: 15, horizontal: 10),
-                    decoration: BoxDecoration(
-                      border: Border.all(color: Colors.blue, width: 3),
-                    ),
-                    padding: const EdgeInsets.all(5),
-                    child: Card(
-                      child: Text(
-                        "\$ ${tx.amount}",
-                        style: const TextStyle(
-                            fontWeight: FontWeight.bold, fontSize: 20),
+              return Card(
+                child: Row(
+                  children: [
+                    Container(
+                      margin: const EdgeInsets.symmetric(
+                          vertical: 15, horizontal: 10),
+                      decoration: BoxDecoration(
+                        border: Border.all(color: Colors.blue, width: 3),
+                      ),
+                      padding: const EdgeInsets.all(5),
+                      child: Card(
+                        child: Text(
+                          "\$ ${tx.amount}",
+                          style: const TextStyle(
+                              fontWeight: FontWeight.bold, fontSize: 20),
+                        ),
                       ),
                     ),
-                  ),
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        tx.title.toString(),
-                        style: const TextStyle(
-                            fontSize: 18, fontWeight: FontWeight.bold),
-                      ),
-                      Text(
-                        tx.date.toString(),
-                        style: const TextStyle(color: Colors.grey),
-                      ),
-                    ],
-                  ),
-                ],
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          tx.title.toString(),
+                          style: const TextStyle(
+                              fontSize: 18, fontWeight: FontWeight.bold),
+                        ),
+                        Text(
+                          DateFormat.yMMMd().format(DateTime.now()),
+                          style: const TextStyle(color: Colors.grey),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
               );
             }).toList(),
           ),
