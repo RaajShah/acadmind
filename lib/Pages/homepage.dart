@@ -31,7 +31,7 @@ class HomePage extends StatelessWidget {
         backgroundColor: Colors.red,
       ),
       body: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        //mainAxisAlignment: MainAxisAlignment.spaceAround,
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           Container(
@@ -40,6 +40,15 @@ class HomePage extends StatelessWidget {
               color: Colors.blue,
               child: Text('CHART'),
               elevation: 5,
+            ),
+          ),
+          Card(
+            elevation: 5,
+            child: Column(
+              children: const [
+                TextField(),
+                TextField(),
+              ],
             ),
           ),
           Column(
